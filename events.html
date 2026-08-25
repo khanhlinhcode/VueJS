@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event VueJS</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+      <style>
+        .box {
+          width: 200px;
+          height: 200px;
+          background-color: lightgray;
+          margin-top: 20px;
+        }
+      </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Count:{{ counter }}</h1>
+        <button v-on:click="handleClick($event,3)">Click Me</button>
+        <div class="box" v-on:mousemove="handleMouseMove"></div>
+        <p>X: {{ clientX }}</p>
+        <p>Y: {{ clientY }}</p>
+    </div>
+</body>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                counter:0,
+                clientX:0,
+                clientY:0,
+            },
+            methods:{
+                handleClick(e,number){
+                    this.counter+=number;
+                },
+                handleMouseMove(e){
+                    this.clientX=e.clientX;
+                    this.clientY=e.clientY;
+                }
+
+            }
+
+        })
+    </script>
+</html>
