@@ -34,3 +34,19 @@
     - tại sao phải sử dụng cái computed vì các hàm thông thường nó sẽ chạy các hàm không mong muốn khi code không liên quan làm giảm cái hiệu xuất người dùng và hiệu xuất chương trình
     - nó được khai báo như một hàm nhưng mà nó sẽ được lưu vào đối tượng vue và hàm thực thi khi dữ liệu trong này bị thay đổi thôi, biến nào trong đó thay đổi thì mới gọi còn không thì không gọi, tốc độ chương trình sẽ được tăng hơn sử dụng methods
  -->
+<!-- ràng buộc dữ liệu hai chiều dữ liệu hai chiều được thể hiện ở chỗ dữ liệu của mình sẽ được gán vào ô input và đồng thời ô input cũng ràng buộc cai dữ liệu mà người dùng nhập vào, Vue cũng cung cấp một cái chỉ thị để thực hiện cái này nhanh hơn thông qua v-model
+ -->
+<!-- class and style Bindings ràng buộc class và style bản chất nó     cũng là một attribute áp dụng chỉ thị v-bind
+    - về Binding inline style để ràng buộc object thay đổi cái style mặc định của phần tử key của object là tên của thuộc tính trong css viết theo cammocare, lưu ý khi lên mạng lấy link thì mình sẽ copy bằng open image in new tab, lấy link url bỏ vào cái tham số backgroud giả lập lấy từ sever và bỏ vào một biến nếu mình muốn hiển thị ra ngoài phải có v-bing để ràng buộc biến ra ngoài, sửa chữ i trong image thành in hoa, đưa vào object lun có thuộc tính là backgroudImage:co giá trị là cái ảnh nếu ở dưới data có link ảnh và muốn lấy qua {{ backgroundImage:'url'(' + bg + ')'}} thì mình phải nối chuỗi chứ không đuọc viết như bình thường nếu viết bình thường nó sẽ hiểu là một cái chuỗi, lúc này cái bg sẽ thành một biến khi render ra chuõi này nó sẽ gắn với cái biến bg để rende ra
+ -->
+<!--
+    Biểu thức điều kiện trong vue nó dùng dể render ra các phần tử hTML nào đó theo điều kiện nhất định v-if(sử dụng nhiều), v-else, v-else-if(chỉ thị mới) trong tư duy vue rất đơn giản ta tạo ra một cái biến
+ -->
+<!-- list Rendering(vong lap)
+    khi ta có lượng dữ liệu đỗ về từ sever thì nhiệm vụ của mình là render ra được cái mảng đó vào html là xong, sử dụng v-for,
+    ==> lưu ý về v-for, v-if cũng như mức độ ưu tiên:
+ -->
+<!--
+    ôn về vùng nhớ trog javascript 
+    - array: bảng chất nó là object
+  -->

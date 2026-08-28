@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two way bindings and class and style</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>FirstName: {{firstName }}</h1>
+      <input v-model="firstName" type="text" name="Nhap FirstName" />
+      <div v-bind:class="'demo-' +textClass"></div>
+      <hr />
+
+      <div v-bind:style="{color:activeColor,fontSize:fontSize+'px'}">
+        Test style Bildings
+      </div>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        firstName: "nguyen van a",
+        textClass: "active",
+        activeColor: "red",
+        fontSize: 20,
+      },
+      methods: {},
+    });
+  </script>
+</html>
