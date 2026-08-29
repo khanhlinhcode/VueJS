@@ -1,31 +1,91 @@
 <template>
   <div id="app">
-    <CompHeader />
-    <img src="./assets/logo.png" />
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <CompHeader v-bind:text="title" />
+    <ListUser :list-user="ListUser" @delete-user="handleDeleteUser" />
+    <CompFooter v-bind:title="title" />
+    <DemoRef />
   </div>
 </template>
 <!--
 App
-  header
-  listproduct
-    item product
-    item product
-    item product
-  footer
+  component
+    CompHeader
+    ListUser
+      User
+      User
+      User
+      User
+    CompFooter
+- muốn truyền cái title bên retủn bên app này qua header thì ta sẽ dùng cái gì -> props
+  + props được hiểu là một cơ chế truyền dữ liệu từ component cha sang component con
+  + cú pháp
+    <CompHeader :text="title" /> gần giống với thuộc tính -> những chuings ta phải ràng buộc thuộc tính đó
+   + sử dụng v-bind để ràng buộc thuộc tính với dữ liệu trong component cha
  -->
 <script>
 import CompHeader from "./component/CompHeader.vue";
+import CompFooter from "./component/CompFooter.vue";
+import ListUser from "./component/ListUser.vue";
+import DemoRef from "./DemoRef.vue";
 export default {
   name: "app",
   data() {
     return {
-      msg: "Xin chào Vue.js!",
+      title: "Hello Vue.js--header",
+      ListUser: [
+        {
+          id: 1,
+          name: "Nguyen Van A",
+          age: 20,
+        },
+        {
+          id: 2,
+          name: "Nguyen Van B",
+          age: 21,
+        },
+        {
+          id: 3,
+          name: "Nguyen Van C",
+          age: 22,
+        },
+        {
+          id: 4,
+          name: "Nguyen Van C",
+          age: 22,
+        },
+        {
+          id: 5,
+          name: "Nguyen Van C",
+          age: 22,
+        },
+        {
+          id: 6,
+          name: "Nguyen Van C",
+          age: 22,
+        },
+        {
+          id: 7,
+          name: "Nguyen Van C",
+          age: 22,
+        },
+        {
+          id: 8,
+          name: "Nguyen Van C",
+          age: 22,
+        },
+      ],
     };
   },
   components: {
     CompHeader,
+    CompFooter,
+    ListUser,
+    DemoRef,
+  },
+  methods: {
+    handleDeleteUser(userId) {
+      this.ListUser = this.ListUser.filter((user) => user.id !== userId);
+    },
   },
 };
 </script>
@@ -38,24 +98,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
 }
 </style>

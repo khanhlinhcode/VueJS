@@ -48,5 +48,5 @@
  -->
 <!--
     ôn về vùng nhớ trog javascript 
-    - array: bảng chất nó là object
+    - array: bảng chất nó là **object**
   -->
